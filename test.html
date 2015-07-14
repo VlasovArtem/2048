@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body onload="init()">
+<canvas id="test" width="400" height="400"></canvas>
+<script>
+    var canvas, ctx;
+    var x = 5;
+    var y = 5;
+    var animationId;
+    var rectWidth = 50, rectHeight = 50;
+    var bounceCount = 0;
+    var hello = null;
+    if(hello != null || hello.x == 0) {
+        console.log('Hello')
+    }
+    function init() {
+        canvas = document.getElementById("test");
+        ctx = canvas.getContext('2d');
+
+        animationId = setTimeout(animationLoop, 1000/60);
+    }
+
+    function drawRect() {
+        ctx.fillStyle = 'green';
+        ctx.fillRect(x, y, rectWidth, rectHeight);
+    }
+    function animationLoop() {
+        ctx.clearRect(0, 0, 400, 400);
+        drawRect();
+        if(x + 50 < 350) {
+            x += 5;
+            animationId = setTimeout(animationLoop, 1000/60);
+        } else {
+            if(animationId) {
+                clearTimeout(animationId);
+            }
+            setTimeout(bounce, 1000/30);
+        }
+    }
+    function bounce() {
+        ctx.clearRect(0, 0, 400, 400);
+        drawRect();
+        if(bounceCount < 5) {
+            y -= 1;
+            x -= 1;
+            rectWidth += 2;
+            rectHeight += 2;
+        } else if(bounceCount == 9) {
+            bounceCount = 0
+        } else {
+            y += 1;
+            x += 1;
+            rectWidth -= 2;
+            rectHeight -= 2;
+        }
+        bounceCount++;
+        setTimeout(bounce, 1000/30);
+    }
+</script>
+</body>
+</html>

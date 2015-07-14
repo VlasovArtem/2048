@@ -1,0 +1,47 @@
+body {
+  background-color: #92d9ff;
+}
+input {
+  text-align: center;
+}
+#canvas {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  margin-bottom: 30px;
+}
+.button > table {
+  margin-right: 20px;
+}
+.button > table th, td {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0 10px 0 0;
+}
+.button > input {
+  vertical-align: super;
+}
+
+.info {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+input[type="button"] {
+  background-color: grey;
+  color: white;
+  border: none;
+  font-size: large;
+  border-radius: 5px;
+  width: 80px;
+  height: 40px;
+}

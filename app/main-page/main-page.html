@@ -1,0 +1,26 @@
+<div ng-init="init()">
+    <div class="info">
+        <h1>2048 game</h1>
+        <article>This game was created with help of HTML5 and AngularJS</article>
+    </div>
+    <div class="button">
+        <table>
+            <tr>
+                <th ng-show="maxScore">Max</th>
+                <th ng-show="prevScore">Previous</th>
+                <th>Current</th>
+            </tr>
+            <tr>
+                <td ng-show="maxScore" ng-bind="maxScore"></td>
+                <td ng-show="prevScore" ng-bind="prevScore"></td>
+                <td ng-bind="gameScore"></td>
+            </tr>
+        </table>
+        <input type="button" value="Reset" ng-click="resetGame()"/>
+    </div>
+    <div id="canvas">
+        <div>
+            <canvas id="2048Canvas"></canvas>
+        </div>
+    </div>
+</div>
